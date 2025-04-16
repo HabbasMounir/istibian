@@ -1,0 +1,119 @@
+.surveyContainer {
+
+    margin: 0 auto;
+    /* padding: 20px; */
+}
+
+.surveyCard {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 25px;
+    width: 100%;
+    /* box-shadow: var(--card-shadow); */
+    transform: translateY(0);
+    transition: var(--transition);
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.surveyCard:hover {
+    /* transform: translateY(-5px); */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.048);
+}
+
+.sectionTitle {
+    position: relative;
+    color: var(--primary);
+    font-size: 22px;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+}
+
+.sectionTitle::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background: linear-gradient(to right, var(--primary), transparent);
+    margin-right: 15px;
+}
+
+.sectionTitle svg {
+    margin-left: 10px;
+    color: var(--primary);
+}
+
+.instructions {
+    color: var(--secondary);
+    font-weight: 600;
+    margin: 25px 0 15px;
+    padding-right: 10px;
+    border-right: 3px solid var(--secondary);
+}
+
+.navButtons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(255, 92, 133, 0.3);
+}
+
+button.prev {
+    background-color: #6c757d;
+}
+
+button.prev:hover {
+    background-color: #5a6268;
+    box-shadow: 0 8px 15px rgba(108, 117, 125, 0.3);
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    .surveyContainer {
+        padding: 15px;
+    }
+}
+
+.navigationButtons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.navigationButtons .progress{
+    color: var(--primary);
+
+    
+}

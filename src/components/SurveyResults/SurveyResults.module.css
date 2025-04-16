@@ -1,0 +1,110 @@
+.resultsContainer {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 25px;
+  width: 100%;
+  transform: translateY(0);
+  transition: var(--transition);
+  opacity: 0;
+  animation: fadeIn 0.5s forwards;
+  direction: rtl;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.summaryHeader {
+  position: relative;
+  color: var(--primary);
+  font-size: 22px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  gap: 5px;
+}
+
+.summaryHeader::after {
+  content: '';
+  flex: 1;
+  height: 2px;
+  background: linear-gradient(to right, var(--primary), transparent);
+  margin-right: 15px;
+}
+
+.summaryHeader svg {
+  /* margin-right: 10px; */
+  color: var(--primary);
+}
+
+.answersContainer {
+  max-height: 500px;
+  overflow-y: auto;
+  margin: 25px 0;
+  padding: 15px;
+  border-radius: 15px;
+  background-color: #f8f9fa;
+}
+
+.answerItem {
+  margin: 15px 0;
+  padding: 12px;
+  border-bottom: 1px dashed #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.answerItem strong {
+  background-color: var(--primary);
+  color: white;
+  height: 28px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  padding: 12px;
+}
+
+.actionButtons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.submitButton,
+.restartButton {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.submitButton:hover,
+.restartButton:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(255, 92, 133, 0.3);
+}
+
+.restartButton {
+  background-color: #6c757d;
+}
+
+.restartButton:hover {
+  background-color: #5a6268;
+  box-shadow: 0 8px 15px rgba(108, 117, 125, 0.3);
+}

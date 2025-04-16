@@ -1,0 +1,188 @@
+.question {
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.question:last-child {
+    border-bottom: none;
+}
+
+.questionText {
+    font-weight: 500;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.questionText span {
+    /* margin-left: 10px; */
+    background-color: var(--primary);
+    color: white;
+    /* width: 28px; */
+    height: 28px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 12px;
+}
+
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+    padding: 8px 16px;
+    border-radius: 30px;
+    background-color: #f8f9fa;
+}
+
+.option:hover {
+    background-color: #f0f0f0;
+}
+
+.option input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+    display: inline-block;
+    margin-left: 8px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.option:hover .checkmark {
+    background-color: #ccc;
+}
+
+.option input:checked ~ .checkmark {
+    background-color: var(--primary);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.option input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.checkboxMark {
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 4px;
+    display: inline-block;
+    margin-left: 8px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.option:hover .checkboxMark {
+    background-color: #ccc;
+}
+
+.option input:checked ~ .checkboxMark {
+    background-color: var(--primary);
+}
+
+.checkboxMark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.option input:checked ~ .checkboxMark:after {
+    display: block;
+}
+
+.likertContainer {
+    /* background-color: #f9f9f9; */
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 15px;
+}
+
+.likertOptions {
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+}
+
+.likertOption {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+.likertDot {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-bottom: 5px;
+}
+
+.likertDot:hover {
+    background-color: #ddd;
+    transform: scale(1.1);
+}
+
+.likertDot.selected {
+    background-color: var(--primary);
+    color: white;
+}
+
+.likertLabel {
+    font-size: 12px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .likertDot {
+        width: 30px;
+        height: 30px;
+    }
+}

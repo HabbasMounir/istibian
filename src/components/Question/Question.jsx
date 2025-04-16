@@ -14,7 +14,14 @@ const Question = ({ question, onAnswer, currentAnswer }) => {
                   name={question.id}
                   value={option.value || option}
                   checked={currentAnswer === (option.value || option)}
-                  onChange={(e) => onAnswer(question.id, e.target.value)}
+                  onChange={(e) => {
+                    const value = e.target.value;
+                    if (currentAnswer === value) {
+                      onAnswer(question.id, null);
+                    } else {
+                      onAnswer(question.id, value);
+                    }
+                  }}
                 />
                 <span className={styles.checkmark} />
                 {option.label || option}

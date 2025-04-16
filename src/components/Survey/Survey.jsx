@@ -35,7 +35,7 @@ const Survey = ({ surveyData, onComplete }) => {
       (acc, section) => acc + section.questions.length,
       0
     );
-    const answeredQuestions = Object.keys(answers).length;
+    const answeredQuestions = Object.values(answers).filter(answer => answer !== null && answer !== undefined).length;
     return Math.round((answeredQuestions / totalQuestions) * 100);
   };
 

@@ -1,0 +1,123 @@
+.container {
+  padding: 20px;
+  max-width: 100%;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.tableContainer {
+  background: white;
+  /* border-radius: 15px; */
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  /* margin: 1.5rem 0; */
+  position: relative;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  margin: 0;
+  /* padding: 1rem; */
+}
+
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9rem;
+}
+
+.table th,
+.table td {
+  padding: 1rem;
+  text-align: right;
+  /* border-bottom: 1px solid #eee; */
+}
+
+.table th {
+  background: var(--primary);
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+}
+
+.table tbody tr {
+  transition: var(--transition);
+}
+
+.table tbody tr:hover {
+  background-color: rgba(63, 81, 181, 0.05);
+}
+
+.table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.downloadButton {
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  gap: 0.5rem;
+  background:var(--primary);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: var(--transition);
+  justify-content: center;
+  margin: 1rem  0;
+  width: 100%;
+}
+
+.downloadButton:hover {
+  /* transform: translateY(-2px); */
+  background:var(--bg-gradient2);
+    transform: translateY();
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  color: var(--primary);
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255, 64, 129, 0.1);
+  border-top: 3px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  color: #dc3545;
+  text-align: center;
+  padding: 1.5rem;
+  background: #fff5f5;
+  border-radius: 8px;
+  margin: 1rem;
+  border: 1px solid #ffebeb;
+}

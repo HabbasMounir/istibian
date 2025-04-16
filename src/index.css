@@ -8,7 +8,17 @@
   --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
   --transition: all 0.3s ease;
 }
-
+:root {
+  /* --primary: #ff5c85;
+  --primary-dark: #e63e67;
+  --secondary: #6c63ff;
+  --accent: #ffd166;
+  --light: #f8f9fa;
+  --dark: #343a40; */
+  --bg-gradient2: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  /* --card-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+  --transition: all 0.3s ease; */
+}
 * {
   margin: 0;
   padding: 0;
@@ -27,9 +37,9 @@ body {
   max-width: 850px;
     margin: 0 auto;
   padding: 20px;
-  height: 100vh;
+  /* min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; */
 }
 
 button {

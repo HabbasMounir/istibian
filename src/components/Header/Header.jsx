@@ -9,12 +9,12 @@ const Header = ({ currentProgress }) => {
       </div>
       <h1>استبيان حول دور المؤثرين في بناء شخصية العلامة</h1>
       <p>Make Cosmetic DZ</p>
-      <div className={styles.progressContainer}>
+      {/* <div className={styles.progressContainer}>
         <div 
           className={styles.progressBar} 
           style={{ width: `${currentProgress}%` }}
         />
-      </div>
+      </div> */}
     </header>
   );
 };

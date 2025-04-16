@@ -38,7 +38,8 @@ const App = () => {
       <>
        
           <Routes>
-            <Route path="/" element={
+          <Route path="/data" element={<DataPage />} />
+            <Route path="*" element={
                <div className="container">
                 <Header currentProgress={answers ? Object.keys(answers).length / surveyData.sections.reduce((acc, section) => acc + section.questions.length, 0) * 100 : 0} />
                 {showThankYou ? (
@@ -59,7 +60,6 @@ const App = () => {
           </div>
 
             } />
-            <Route path="/data" element={<DataPage />} />
           </Routes>
          
         

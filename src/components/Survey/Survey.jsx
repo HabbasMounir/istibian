@@ -19,7 +19,12 @@ const Survey = ({ surveyData, onComplete, onSubmitSuccess }) => {
     };
     loadSavedAnswers();
   }, []);
+  useEffect(()=>{
 
+    document.querySelector('html').scrollIntoView({ behavior: "smooth", block: "start" });
+    
+  
+},[currentSection])
   const handleAnswer = async (questionId, answer) => {
     const newAnswers = {
       ...answers,

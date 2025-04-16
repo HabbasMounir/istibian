@@ -6,11 +6,10 @@ import SurveyResults from '../SurveyResults/SurveyResults';
 import { saveAnswers, getAnswers, clearAnswers } from '../../services/indexedDB';
 import styles from './Survey.module.css';
 
-const Survey = ({ surveyData, onComplete }) => {
+const Survey = ({ surveyData, onComplete, onSubmitSuccess }) => {
   const [currentSection, setCurrentSection] = useState(0);
   const [answers, setAnswers] = useState({});
   const [isCompleted, setIsCompleted] = useState(false);
-
   useEffect(() => {
     const loadSavedAnswers = async () => {
       const savedAnswers = await getAnswers();
@@ -39,12 +38,24 @@ const Survey = ({ surveyData, onComplete }) => {
     return Math.round((answeredQuestions / totalQuestions) * 100);
   };
 
+  const isCurrentSectionComplete = () => {
+    const currentQuestions = currentSectionData.questions;
+    return currentQuestions.every(question => answers[question.id] !== undefined && answers[question.id] !== null);
+  };
+
   const handleNext = () => {
+    if (!isCurrentSectionComplete()) {
+      alert('الرجاء الإجابة على جميع الأسئلة في هذا القسم');
+      return;
+    }
+
     if (currentSection < surveyData.sections.length - 1) {
       setCurrentSection(prev => prev + 1);
     } else {
       setIsCompleted(true);
-      onComplete(answers);
+      if (onComplete) {
+        onComplete(answers);
+      }
     }
   };
 
@@ -77,7 +88,11 @@ const Survey = ({ surveyData, onComplete }) => {
   return (
     <div className={styles.surveyContainer}>
       {isCompleted ? (
-        <SurveyResults answers={answers} onRestart={handleRestart} />
+        <SurveyResults 
+          answers={answers} 
+          onRestart={handleRestart} 
+          onSubmitSuccess={onSubmitSuccess}
+        />
       ) : (
       <div className={styles.surveyCard}>
         <div className={styles.sectionTitle}>
@@ -114,6 +129,7 @@ const Survey = ({ surveyData, onComplete }) => {
           <button 
             onClick={handleNext}
             className={styles.button}
+            disabled={!isCurrentSectionComplete()}
           >
             {currentSection === surveyData.sections.length - 1 ? 'إنهاء' : 'التالي'}
           </button>

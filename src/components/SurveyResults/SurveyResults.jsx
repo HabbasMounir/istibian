@@ -24,9 +24,9 @@ const SurveyResults = ({ answers, onRestart, onSubmitSuccess }) => {
         localStorage.setItem('surveyCompleted', 'true');
         
         if (onSubmitSuccess) {
-          setTimeout(() => {
+          // setTimeout(() => {
             onSubmitSuccess();
-          }, 100);
+          // }, 100);
         }
       } else {
         console.error('Error submitting survey:', result.error);

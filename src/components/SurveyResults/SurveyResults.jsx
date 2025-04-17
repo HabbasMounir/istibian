@@ -26,7 +26,7 @@ const SurveyResults = ({ answers, onRestart, onSubmitSuccess }) => {
         if (onSubmitSuccess) {
           setTimeout(() => {
             onSubmitSuccess();
-          }, 1500);
+          }, 100);
         }
       } else {
         console.error('Error submitting survey:', result.error);

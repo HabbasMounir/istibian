@@ -51,23 +51,18 @@ const DataPage = () => {
       <button
         className={styles.downloadButton}
         onClick={() => {
-          const csvContent = answers.map(answer => {
-            return [
-              answer.id,
-              answer.age,
-              ...[...Array(5)].map((_, i) => answer[`competence${i + 1}`]),
-              ...[...Array(5)].map((_, i) => answer[`excitement${i + 1}`]),
-              answer.frequency,
-              answer.gender,
-              answer.id,
-              answer.occupation,
-              answer.platform,
-              ...[...Array(5)].map((_, i) => answer[`ruggedness${i + 1}`]),
-              ...[...Array(5)].map((_, i) => answer[`sincerity${i + 1}`]),
-              ...[...Array(5)].map((_, i) => answer[`sophistication${i + 1}`]),
-              answer.timestamp ? new Date(answer.timestamp.seconds * 1000).toLocaleString() : 'N/A'
-            ].join(',');
-          }).join('\n');
+          const headers = Object.keys(answers[0] || {});
+          const csvContent = [
+            headers.join(','),
+            ...answers.map(answer => 
+              headers.map(header => {
+                const value = answer[header];
+                return header === 'timestamp' && value
+                  ? new Date(value.seconds * 1000).toLocaleString()
+                  : value;
+              }).join(',')
+            )
+          ].join('\n');
           const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
           const link = document.createElement('a');
           link.href = URL.createObjectURL(blob);
@@ -79,68 +74,30 @@ const DataPage = () => {
       </button>
       <div className={styles.tableContainer}>
         <div className={styles.tableWrapper}>
-        <table className={styles.table}>
-          <thead>
-            <tr>
-              <th>Document ID</th>
-              <th>Age</th>
-              {[...Array(5)].map((_, i) => (
-                <th key={`competence${i + 1}`}>Competence {i + 1}</th>
-              ))}
-              {[...Array(5)].map((_, i) => (
-                <th key={`excitement${i + 1}`}>Excitement {i + 1}</th>
-              ))}
-              <th>Frequency</th>
-              <th>Gender</th>
-              <th>ID</th>
-              <th>Occupation</th>
-              <th>Platform</th>
-              {[...Array(5)].map((_, i) => (
-                <th key={`ruggedness${i + 1}`}>Ruggedness {i + 1}</th>
-              ))}
-              {[...Array(5)].map((_, i) => (
-                <th key={`sincerity${i + 1}`}>Sincerity {i + 1}</th>
-              ))}
-              {[...Array(5)].map((_, i) => (
-                <th key={`sophistication${i + 1}`}>Sophistication {i + 1}</th>
-              ))}
-              <th>Timestamp</th>
-            </tr>
-          </thead>
-          <tbody>
-            {answers.map(answer => (
-              <tr key={answer.id}>
-                <td>{answer.id}</td>
-                <td>{answer.age}</td>
-                {[...Array(5)].map((_, i) => (
-                  <td key={`competence${i + 1}`}>{answer[`competence${i + 1}`]}</td>
+          <table className={styles.table}>
+            <thead>
+              <tr>
+                {answers[0] && Object.keys(answers[0]).map(key => (
+                  <th key={key}>{key}</th>
                 ))}
-                {[...Array(5)].map((_, i) => (
-                  <td key={`excitement${i + 1}`}>{answer[`excitement${i + 1}`]}</td>
-                ))}
-                <td>{answer.frequency}</td>
-                <td>{answer.gender}</td>
-                <td>{answer.id}</td>
-                <td>{answer.occupation}</td>
-                <td>{answer.platform}</td>
-                {[...Array(5)].map((_, i) => (
-                  <td key={`ruggedness${i + 1}`}>{answer[`ruggedness${i + 1}`]}</td>
-                ))}
-                {[...Array(5)].map((_, i) => (
-                  <td key={`sincerity${i + 1}`}>{answer[`sincerity${i + 1}`]}</td>
-                ))}
-                {[...Array(5)].map((_, i) => (
-                  <td key={`sophistication${i + 1}`}>{answer[`sophistication${i + 1}`]}</td>
-                ))}
-                <td>
-                  {answer.timestamp ? new Date(answer.timestamp.seconds * 1000).toLocaleString() : 'N/A'}
-                </td>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {answers.map(answer => (
+                <tr key={answer.id}>
+                  {Object.entries(answer).map(([key, value]) => (
+                    <td key={key}>
+                      {key === 'timestamp' && value
+                        ? new Date(value.seconds * 1000).toLocaleString()
+                        : value}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
-    </div>
     </div>
   );
 };

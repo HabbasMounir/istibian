@@ -20,15 +20,16 @@
     background: linear-gradient(
         45deg,
         transparent 0%,
-        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.116) 50%,
         transparent 100%
     );
-    transform: rotate(45deg);
+    transform: rotate(15deg);
     animation: shine 4s infinite;
+    filter: blur(100px);
 }
 
 @keyframes shine {
-    0% { transform: rotate(45deg) translateX(-100%); }
+    0% { transform: rotate(15deg) translateX(-100%); }
     100% { transform: rotate(45deg) translateX(100%); }
 }
 

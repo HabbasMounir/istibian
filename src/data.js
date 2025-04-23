@@ -755,10 +755,10 @@ export const surveyData1 = {
               "text": "العمر:",
               "type": "radio",
               "options": [
-                { "value": "under20", "label": "أقل من 25" },
-                { "value": "20to35", "label": "من 25 الى 35" },
-                { "value": "35to55", "label": "من 35 الى 45" },
-                { "value": "above55", "label": "أكثر من 45" }
+                { "value": "under25", "label": "أقل من 25" },
+                { "value": "25to35", "label": "من 25 الى 35" },
+                { "value": "35to45", "label": "من 35 الى 45" },
+                { "value": "above45", "label": "أكثر من 45" }
               ]
             },
             {

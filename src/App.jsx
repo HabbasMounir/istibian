@@ -13,15 +13,39 @@ const App = () => {
   const [isCompleted, setIsCompleted] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
 
-  useEffect(() => {
-    initDB();
-    const completed = localStorage.getItem('surveyCompleted');
-    if (completed) {
-      setIsCompleted(true);
-      setShowThankYou(true);
-    }
-  }, []);
+  // useEffect(() => {
+  //   initDB();
+  //   const completed = localStorage.getItem('surveyCompleted');
+  //   if (completed) {
+  //     setIsCompleted(true);
+  //     setShowThankYou(true);
+  //   }
+  // }, []);
 
+
+  // Define your current survey version
+const CURRENT_SURVEY_VERSION = "2.0";
+
+useEffect(() => {
+  initDB();
+  
+  const completed = localStorage.getItem('surveyCompleted');
+  const storedVersion = localStorage.getItem('surveyVersion');
+  
+  // Check if survey is completed AND if the completed version matches current version
+  if (completed === 'true' && storedVersion === CURRENT_SURVEY_VERSION) {
+    setIsCompleted(true);
+    setShowThankYou(true);
+  } else {
+    // Either survey not completed or an older version was completed
+    setIsCompleted(false);
+    setShowThankYou(false);
+    
+    // Optional: If you want to keep old answers when showing a new version
+    // const oldAnswers = JSON.parse(localStorage.getItem('surveyAnswers') || '{}');
+    // setAnswers(oldAnswers);
+  }
+}, []);
  
 
   const handleComplete = (finalAnswers) => {
@@ -31,6 +55,7 @@ const App = () => {
 
   const handleSubmitSuccess = () => {
     localStorage.setItem('surveyCompleted', 'true');
+    localStorage.setItem('surveyVersion', CURRENT_SURVEY_VERSION);
   };
 
   return (

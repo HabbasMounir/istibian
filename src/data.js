@@ -202,7 +202,7 @@ export const surveyData1 = {
     ]
   };
 
-  export const surveyData = {
+  export const surveyData2 = {
     sections: [
       {
         id: "section1",
@@ -429,3 +429,380 @@ export const surveyData1 = {
       }
     ]
   };
+
+
+  export const surveyData = {
+      "title": "استبيان تسويق المؤثرين لعلامة Make",
+      "sections": [
+       
+        {
+          "id": "section2",
+          "title": " التسويق بالمؤثرين",
+          "icon": "fa-star",
+          "questions": [
+            {
+              "id": "influencer_sincerity",
+              "text": "يبدو المؤثرون الذين يروجون ل Make صادقين ومعجبين بالمنتجات التي يعلنون عنها.",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "influencer_interaction",
+              "text": "يتفاعل المؤثرون مع متابعيهم عند الترويج ل Make بطريقة تجعل التجربة تفاعلية وشخصية.",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "influencer_content",
+              "text": "المحتوى الذي ينشئه المؤثرون عن Make مبتكر، جذاب بصريا وعالي الجودة.",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "influencer_platforms",
+              "text": "يتم الترويج لعلامة Make على منصات التواصل المناسبة.",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "influencer_trust",
+              "text": "أثق بآراء وتوصيات المؤثرين الذين يروجون ل Make.",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_sincerity",
+          "title": "  الصدق (Sincerity)",
+          "icon": "fa-star",
+          "questions": [
+            {
+              "id": "brand_sincerity_1",
+              "text": "تبدو علامة Make صادقة وموثوقة",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "brand_sincerity_2",
+              "text": "أشعر أن Make تهتم بعملائها واحتياجاتهم",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "brand_sincerity_3",
+              "text": "تقدر علامة Make نفسها بطريقة ودية وبسيطة",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_excitement",
+          "title": "  الاثارة (Excitement)",
+          "icon": "fa-star",
+          "questions": [
+            {
+              "id": "brand_excitement_1",
+              "text": "تبدو Make كعلامة حيوية وديناميكية",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "brand_excitement_2",
+              "text": "تبدو Make علامة عصرية وجذابة",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "brand_excitement_3",
+              "text": "تفاجئني Make بأفكار مبتكرة دائما",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_competence",
+          "title": "  الكفاءة (Competence)",
+          "icon": "fa-star",
+          "questions": [
+            {
+              "id": "brand_competence_1",
+              "text": "تبدو Make علامة احترافية وموثوقة",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "brand_competence_2",
+              "text": "تقدم Make منتجات عالية الجودة",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "brand_competence_3",
+              "text": "تبدو Make ذات تجربة وخبرة في مجالها",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_sophistication",
+          "title": "  الرقي (Sophistication)",
+          "icon": "fa-star",
+          "questions": [
+            {
+              "id": "brand_sophistication_1",
+              "text": "تمنح Make احساسا بالفخامة والأناقة",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "brand_sophistication_2",
+              "text": "تبدو علامة Make فاخرة وذات تصميم مميز وراقي",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "brand_sophistication_3",
+              "text": "تستهدف Make أشخاصا ذوي أذواق راقية",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section3_ruggedness",
+          "title": " القوة والصلابة (Ruggedness)",
+          "icon": "fa-star",
+          "questions": [
+            {
+              "id": "brand_ruggedness_1",
+              "text": "تعطي Make انطباعا بالقوة والصلابة",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "brand_ruggedness_2",
+              "text": "تظهر Make كعلامة جريئة، متينة واعتمادية",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            },
+            {
+              "id": "brand_ruggedness_3",
+              "text": "يبدو أن Make موجهة للأشخاص الأكفاء",
+              "type": "likert",
+              "options": [
+                { "value": "1", "label": "غير موافق بشدة" },
+                { "value": "2", "label": "غير موافق" },
+                { "value": "3", "label": "محايد" },
+                { "value": "4", "label": "موافق" },
+                { "value": "5", "label": "موافق بشدة" }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "section4",
+          "title": " الرؤية والمشاهدة",
+          "icon": "fa-eye",
+          "questions": [
+            {
+              "id": "visibility_frequency",
+              "text": "كم عدد المرات التي شاهدت فيها مؤثرا يروج لعلامة Make:",
+              "type": "radio",
+              "options": [
+                { "value": "many", "label": "كثيرا" },
+                { "value": "few", "label": "قليلا" },
+                { "value": "very_few", "label": "قليلا جدا" }
+              ]
+            },
+            {
+              "id": "visibility_platform",
+              "text": "على أي منصة شاهدت هذا الترويج؟(يمكنك اختيار أكثر من اجابة)",
+              "type": "checkbox",
+              "options": [
+                { "value": "instagram", "label": "انستغرام" },
+                { "value": "facebook", "label": "فايسبوك" },
+                { "value": "tiktok", "label": "تيكتوك" },
+                { "value": "youtube", "label": "يوتيوب" },
+                { "value": "other", "label": "أخرى" }
+              ]
+            }
+          ]
+        }, {
+          "id": "section1",
+          "title": "المعلومات الشخصية",
+          "icon": "fa-user",
+          "questions": [
+            {
+              "id": "age",
+              "text": "العمر:",
+              "type": "radio",
+              "options": [
+                { "value": "under20", "label": "أقل من 25" },
+                { "value": "20to35", "label": "من 25 الى 35" },
+                { "value": "35to55", "label": "من 35 الى 45" },
+                { "value": "above55", "label": "أكثر من 45" }
+              ]
+            },
+            {
+              "id": "gender",
+              "text": "الجنس:",
+              "type": "radio",
+              "options": [
+                { "value": "female", "label": "أنثى" },
+                { "value": "male", "label": "ذكر" }
+              ]
+            },
+            {
+              "id": "education",
+              "text": "المستوى التعليمي:",
+              "type": "radio",
+              "options": [
+                { "value": "middle", "label": "متوسط" },
+                { "value": "highschool", "label": "ثانوي" },
+                { "value": "university", "label": "جامعي" }
+              ]
+            },
+            {
+              "id": "occupation",
+              "text": "المهنة:",
+              "type": "radio",
+              "options": [
+                { "value": "student", "label": "طالب" },
+                { "value": "employee", "label": "موظف" },
+                { "value": "selfemployed", "label": "عمل حر/تاجر" },
+                { "value": "other", "label": "أخرى" }
+              ]
+            },
+            {
+              "id": "income",
+              "text": "الدخل:",
+              "type": "radio",
+              "options": [
+                { "value": "under15k", "label": "أقل من 15000" },
+                { "value": "15kto50k", "label": "15000 الى 50000" },
+                { "value": "above50k", "label": "أكثر من 50000" }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  

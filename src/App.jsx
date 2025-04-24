@@ -7,6 +7,7 @@ import DataPage from './components/DataPage/DataPage';
 import { initDB } from './services/indexedDB';
 import './index.css';
 import { surveyData } from './data';
+import { Helmet } from 'react-helmet';
 
 const App = () => {
   const [answers, setAnswers] = useState({});
@@ -60,6 +61,15 @@ useEffect(() => {
 
   return (
     <Router>
+    <Helmet>
+        <title>Your Page Title</title>
+        <meta property="og:title" content="Custom Share Title" />
+        <meta property="og:description" content="Custom description when shared" />
+        <meta property="og:image" content="https://yoursite.com/image.jpg" />
+        <meta property="og:url" content="https://yoursite.com/your-page" />
+        <meta name="twitter:title" content="Custom Share Title" />
+      </Helmet>
+
       <>
        
           <Routes>

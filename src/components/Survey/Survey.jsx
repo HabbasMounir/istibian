@@ -6,9 +6,9 @@ import SurveyResults from '../SurveyResults/SurveyResults';
 import { saveAnswers, getAnswers, clearAnswers } from '../../services/indexedDB';
 import styles from './Survey.module.css';
 
-const Survey = ({ surveyData, onComplete, onSubmitSuccess }) => {
+const Survey = ({ surveyData, onComplete, onSubmitSuccess,answers, setAnswers }) => {
   const [currentSection, setCurrentSection] = useState(0);
-  const [answers, setAnswers] = useState({});
+  // const [answers, setAnswers] = useState({});
   const [isCompleted, setIsCompleted] = useState(false);
   useEffect(() => {
     const loadSavedAnswers = async () => {
@@ -25,6 +25,7 @@ const Survey = ({ surveyData, onComplete, onSubmitSuccess }) => {
     
   
 },[currentSection])
+
   const handleAnswer = async (questionId, answer) => {
     const newAnswers = {
       ...answers,
@@ -56,6 +57,7 @@ const Survey = ({ surveyData, onComplete, onSubmitSuccess }) => {
 
     if (currentSection < surveyData.sections.length - 1) {
       setCurrentSection(prev => prev + 1);
+      // ischk?handleRestart():''
     } else {
       setIsCompleted(true);
       if (onComplete) {
@@ -92,6 +94,7 @@ const Survey = ({ surveyData, onComplete, onSubmitSuccess }) => {
 
   return (
     <div className={styles.surveyContainer}>
+      {/* <div onClick={handleRestart}>clearAnswers</div> */}
       {isCompleted ? (
         <SurveyResults 
           answers={answers} 

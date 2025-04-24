@@ -4,7 +4,7 @@ import Header from './components/Header/Header';
 import Survey from './components/Survey/Survey';
 import ThankYou from './components/ThankYou/ThankYou';
 import DataPage from './components/DataPage/DataPage';
-import { initDB } from './services/indexedDB';
+import { clearAnswers, initDB, saveAnswers } from './services/indexedDB';
 import './index.css';
 import { surveyData } from './data';
 import { Helmet } from 'react-helmet';
@@ -13,6 +13,7 @@ const App = () => {
   const [answers, setAnswers] = useState({});
   const [isCompleted, setIsCompleted] = useState(false);
   const [showThankYou, setShowThankYou] = useState(false);
+  const [res, setRes] = useState(false);
 
   // useEffect(() => {
   //   initDB();
@@ -34,7 +35,7 @@ useEffect(() => {
   const storedVersion = localStorage.getItem('surveyVersion');
   
   // Check if survey is completed AND if the completed version matches current version
-  if (completed === 'true' && storedVersion === CURRENT_SURVEY_VERSION) {
+  if (completed === 'true') {
     setIsCompleted(true);
     setShowThankYou(true);
   } else {
@@ -42,12 +43,30 @@ useEffect(() => {
     setIsCompleted(false);
     setShowThankYou(false);
     
-    // Optional: If you want to keep old answers when showing a new version
-    // const oldAnswers = JSON.parse(localStorage.getItem('surveyAnswers') || '{}');
-    // setAnswers(oldAnswers);
+  
   }
-}, []);
- 
+  if (!(storedVersion === CURRENT_SURVEY_VERSION)) {
+    console.log('CURRENT_SURVEY_VERSION',storedVersion === CURRENT_SURVEY_VERSION)
+    setRes(!res)
+    handleRestart()
+    localStorage.setItem('surveyVersion', CURRENT_SURVEY_VERSION);
+    localStorage.setItem('surveyCompleted', 'false');
+  } 
+  
+
+
+}, [res]);
+useEffect(() => {
+console.log(answers)
+},[answers])
+const handleRestart = async () => {
+  console.log('restart')
+  setAnswers({});
+  setIsCompleted(false);
+  await clearAnswers();
+  await saveAnswers(answers);
+
+};
 
   const handleComplete = (finalAnswers) => {
     setAnswers(finalAnswers);
@@ -61,14 +80,7 @@ useEffect(() => {
 
   return (
     <Router>
-    <Helmet>
-        <title>Your Page Title</title>
-        <meta property="og:title" content="Custom Share Title" />
-        <meta property="og:description" content="Custom description when shared" />
-        <meta property="og:image" content="https://yoursite.com/image.jpg" />
-        <meta property="og:url" content="https://yoursite.com/your-page" />
-        <meta name="twitter:title" content="Custom Share Title" />
-      </Helmet>
+    
 
       <>
        
@@ -87,6 +99,8 @@ useEffect(() => {
                       handleSubmitSuccess();
                       setShowThankYou(true);
                     }}
+                    answers={answers} 
+                    setAnswers={setAnswers}
                   />
                 )}
           <footer>
